@@ -58,7 +58,7 @@ extension ProtocolDeclSyntax {
     }
 
     private var apiAttributes: [APIAttribute] {
-        attributes?
+        attributes
             .compactMap { $0.as(AttributeSyntax.self) }
             .compactMap(APIAttribute.init) ?? []
     }
@@ -213,7 +213,7 @@ extension FunctionDeclSyntax {
     }
 
     private var apiAttributes: [APIAttribute] {
-        attributes?
+        attributes
             .compactMap { $0.as(AttributeSyntax.self) }
             .compactMap(APIAttribute.init) ?? []
     }
